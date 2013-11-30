@@ -7,7 +7,7 @@ class Orusuban
   match(/^ただいま/, method: :stop, use_prefix: false)
   match(/.*/, method: :reply, use_prefix: false)
 
-  timer 10, method: :talk_to_oneself
+  timer 600, method: :talk_to_oneself
   def talk_to_oneself
     return unless @answering
     @bot.channels.sample.msg config[:talk_to_oneself].sample
